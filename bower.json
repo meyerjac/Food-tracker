@@ -1,0 +1,20 @@
+{
+  "name": "angularJS",
+  "description": "this is a template for all angular projects",
+  "main": "",
+  "authors": [
+    "Jackson Meyer <jackson.meyer7@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
