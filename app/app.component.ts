@@ -13,7 +13,8 @@ import { Food } from './food.model';
     <edit-food
       [childSelectedFood]="selectedFood"
       (doneClickedSender)="finishedEditing()"
-    ></edit-food>
+    ></edit-food><br>
+    <new-food (newFoodSender)= "addFood($event)"></new-food>
   </div>
   `
 })
@@ -31,5 +32,8 @@ export class AppComponent {
   }
   finishedEditing() {
     this.selectedFood = null;
+  }
+  addFood(newFoodFromChild: Food) {
+    this.masterFoodList.push(newFoodFromChild);
   }
 }
