@@ -7,8 +7,8 @@ import { Food } from './food.model';
   <h3>filter by calories per food item</h3>
   <select (change)="onChange($event.target.value)">
     <option value="all" selected="selected">Show All</option>
-    <option value="low">low-calorie foods</option>
-    <option value="high">high-calorie foods</option>
+    <option value="low">low-calorie foods(less than 500 kcal)</option>
+    <option value="high">high-calorie foods(higher than 500kcal)</option>
   </select>
 
     <div *ngFor="let currentFood of childFoodList | calories:selectedCalories">
