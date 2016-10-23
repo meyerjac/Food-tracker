@@ -4,7 +4,7 @@ import { Food } from './food.model';
 @Component({
   selector: 'new-food',
   template: `
-  <h1>New Task</h1>
+  <h1>New Food!</h1>
   <div>
     <label>Enter Food Name:</label>
     <input #newName>
@@ -16,14 +16,17 @@ import { Food } from './food.model';
    <div>
      <label>Enter food Calories:</label>
      <input #newCalories>
-     <button class ="btn-sm btn-info" click = "addClicked(newName.value, newDetails.value, newCalories.value); newName.value='';
-     newdetails.value=''; newCalories.value='';
+     <button (click) = "
+     addClicked(newName.value, newDetails.value, newCalories.value);
+     newName.value='';
+     newDetails.value='';
+     newCalories.value='';
      ">Add!</button>
    </div>
   `
 })
 
-export class NewFooderComponent {
+export class NewFoodComponent {
   @Output() newFoodSender = new EventEmitter();
   addClicked(name: string, details: string, calories: number) {
     var newFoodToAdd: Food = new Food(name, details, calories);

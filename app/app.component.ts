@@ -14,7 +14,9 @@ import { Food } from './food.model';
       [childSelectedFood]="selectedFood"
       (doneClickedSender)="finishedEditing()"
     ></edit-food><br>
-    <new-food (newFoodSender)= "addFood($event)"></new-food>
+    <new-food
+      (newFoodSender)= "addFood($event)"
+    ></new-food>
   </div>
   `
 })
