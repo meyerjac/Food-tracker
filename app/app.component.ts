@@ -4,19 +4,29 @@ import { Food } from './food.model';
 @Component({
   selector: 'my-app',
   template: `
-  <div class="container">
-    <h1>Food-tracker</h1>
-    <food-list
-      [childFoodList]="masterFoodList"
-      (clickSender)="showDetails($event)"
-     ></food-list>
-    <edit-food
-      [childSelectedFood]="selectedFood"
-      (doneClickedSender)="finishedEditing()"
-    ></edit-food><br>
-    <new-food
-      (newFoodSender)= "addFood($event)"
-    ></new-food>
+  <div class = "row">
+    <div class = "col-md-3">
+      <div class="container">
+        <h1>Food-tracker</h1>
+        <food-list
+          [childFoodList]="masterFoodList"
+          (clickSender)="showDetails($event)"
+         ></food-list>
+        </div>
+      </div>
+      <div class = "col-md-6">
+        <div class="container">
+          <edit-food
+            [childSelectedFood]="selectedFood"
+            (doneClickedSender)="finishedEditing()"
+          ></edit-food><br>
+          </div>
+          <div class="container">
+          <new-food
+            (newFoodSender)= "addFood($event)"
+          ></new-food>
+          </div>
+        </div>
   </div>
   `
 })
