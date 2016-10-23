@@ -5,7 +5,7 @@ import { Food } from './food.model';
   selector: 'my-app',
   template: `
   <div class = "row">
-    <div class = "col-md-3">
+    <div class = "col-sm-3">
       <div class="container">
         <h1>Food-tracker</h1>
         <food-list
@@ -14,7 +14,7 @@ import { Food } from './food.model';
          ></food-list>
         </div>
       </div>
-      <div class = "col-md-6">
+      <div class = "col-sm-3">
         <div class="container">
           <edit-food
             [childSelectedFood]="selectedFood"
