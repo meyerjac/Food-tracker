@@ -5,13 +5,13 @@ import { Food } from './food.model';
   selector: 'food-list',
   template: `
   <h3>filter by calories per food item</h3>
-  <select>
+  <select (change)="onChange($event.target.value)">
     <option value="all" selected="selected">Show All</option>
     <option value="low">low-calorie foods</option>
     <option value="high">high-calorie foods</option>
   </select>
 
-    <div *ngFor="let currentFood of childFoodList | calories">
+    <div *ngFor="let currentFood of childFoodList | calories:selectedCalories">
       <h3>{{ currentFood.name }}</h3>
       <li> {{ currentFood.details }}</li>
       <li> {{ currentFood.calories }}</li>
@@ -26,4 +26,10 @@ export class FoodListComponent {
   editButtonHasBeenClicked(foodToEdit: Food) {
     this.clickSender.emit(foodToEdit)
   }
+  public selectedCalories: string = "all";
+  onChange(optionFromMenu) {
+    this.selectedCalories = optionFromMenu;
+    console.log(this.selectedCalories);
+  }
+
 }
